@@ -2,17 +2,17 @@ package com.project.twitterredux.fragments;
 
 import java.util.ArrayList;
 
-import com.project.twitterredux.R;
-import com.project.twitterredux.TweetsAdapter;
-import com.project.twitterredux.models.Tweet;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import com.activeandroid.util.Log;
+import com.project.twitterredux.R;
+import com.project.twitterredux.TweetsAdapter;
+import com.project.twitterredux.models.Tweet;
 
 public class TweetsListFragment extends Fragment {
 	TweetsAdapter adapter;
@@ -38,4 +38,5 @@ public class TweetsListFragment extends Fragment {
 	public TweetsAdapter getAdapter() {
 		return adapter;
 	}
+
 }

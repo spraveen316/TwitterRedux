@@ -65,7 +65,7 @@ public class TimelineActivity extends FragmentActivity implements TabListener {
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		
 	}
-
+	
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 		FragmentManager fragmentManager = getSupportFragmentManager();

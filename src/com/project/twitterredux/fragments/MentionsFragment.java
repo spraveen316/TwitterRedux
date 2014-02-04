@@ -11,6 +11,7 @@ import com.project.twitterredux.MyTwitterApp;
 import com.project.twitterredux.models.Tweet;
 
 public class MentionsFragment extends TweetsListFragment {
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,4 +25,5 @@ public class MentionsFragment extends TweetsListFragment {
 				});
 
 	}
+
 }

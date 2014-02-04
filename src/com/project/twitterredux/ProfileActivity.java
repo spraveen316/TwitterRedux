@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,7 +19,14 @@ public class ProfileActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-		loadProfileInfo();
+		
+		String screen_name = getIntent().getStringExtra("screen_name");
+		
+		if (screen_name == null) {
+			loadProfileInfo();
+		} else {
+			loadFriendProfileInfo(screen_name);
+		}
 		
 	}
 
@@ -33,6 +41,20 @@ public class ProfileActivity extends FragmentActivity {
 
 		});
 
+	}
+	
+	private void loadFriendProfileInfo(final String username) {
+		MyTwitterApp.getRestClient().getFriendInfo(username, new JsonHttpResponseHandler() {
+			@Override
+			public void onSuccess(JSONObject json) {
+				User user = User.fromJson(json);
+				getActionBar().setTitle("@" + user.getScreenName());
+				populateUserProfile(user);
+			}
+
+		});
+		View view = findViewById(R.id.fragment_user_timeline);
+		view.setVisibility(View.GONE);
 	}
 	
 	private void populateUserProfile(User user) {
