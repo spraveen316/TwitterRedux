@@ -7,10 +7,11 @@ public class User {
 	private String name;
 	private long uid;
 	private String screenName;
-	private String profileBgImageUrl;
+	private String profileImageUrl;
 	private int numTweets;
 	private int followersCount;
 	private int friendsCount;
+	private String tagLine;
 	
     public String getName() {
         return name;
@@ -23,9 +24,13 @@ public class User {
     public String getScreenName() {
         return screenName;
     }
+    
+    public String getTagLine() {
+    	return tagLine;
+    }
 
-    public String getProfileBackgroundImageUrl() {
-        return profileBgImageUrl;
+    public String getProfileImageUrl() {
+        return profileImageUrl;
     }
 
     public int getNumTweets() {
@@ -46,10 +51,11 @@ public class User {
         	u.name = json.getString("name");
         	u.uid = json.getLong("id");
         	u.screenName = json.getString("screen_name");
-        	u.profileBgImageUrl = json.getString("profile_background_image_url");
+        	u.profileImageUrl = json.getString("profile_image_url");
         	u.numTweets = json.getInt("statuses_count");
         	u.followersCount = json.getInt("followers_count");
         	u.friendsCount = json.getInt("friends_count");
+        	u.tagLine = json.getString("description");
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -26,6 +26,11 @@ public class TimelineActivity extends FragmentActivity implements TabListener {
 		setUpNavigationTabs();
 	}
 	
+	public void onProfileView(MenuItem menuItem) {
+		Intent intent = new Intent(this, ProfileActivity.class);
+		startActivity(intent);
+	}
+	
 	private void setUpNavigationTabs() {
 		ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);

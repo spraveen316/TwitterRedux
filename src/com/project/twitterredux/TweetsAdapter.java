@@ -29,7 +29,7 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 		
 		Tweet tweet = getItem(position);
 		ImageView imageView = (ImageView) view.findViewById(R.id.ivProfile);
-		ImageLoader.getInstance().displayImage(tweet.getUser().getProfileBackgroundImageUrl(), imageView);
+		ImageLoader.getInstance().displayImage(tweet.getUser().getProfileImageUrl(), imageView);
 		
 		TextView nameView = (TextView)view.findViewById(R.id.tvName);
 		String formatterName = "<b>" + tweet.getUser().getName() + "</b>"
